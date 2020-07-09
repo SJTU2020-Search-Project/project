@@ -1,5 +1,5 @@
-import html_downloader
-import html_parser
+from BetaSpider import html_downloader
+from BetaSpider import html_parser
 
 
 class MiniSpider(object):
