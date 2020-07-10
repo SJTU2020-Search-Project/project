@@ -1,0 +1,31 @@
+.ant-input-search {
+    width: 700px;
+}
+
+.search-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+}
+
+.logo {
+    width: 700px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -350px;
+}
+
+.title {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+
+.layout {
+    height: 125vh;
+    background-image: url("../assets/background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

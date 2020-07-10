@@ -1,0 +1,54 @@
+.resultTitle {
+    font-size: 20px;
+}
+
+a.resultTitle:link {
+    color: #001BA0;
+}
+
+a.resultTitle:visited {
+    color: #800080;
+}
+
+a.resultTitle:hover {
+    color: #FF7A1E;
+}
+
+.leave {
+    background: white;
+    position: relative;
+    left: 40%;
+    width: 250%;
+    border-radius: 10px;
+}
+
+.entry {
+    background: white;
+    position: relative;
+    left: 40%;
+    width: 250%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px 0 #909090;
+    top: -2px;
+}
+
+.content {
+    padding: 5px;
+}
+
+.resultUrl {
+    font-size: 13px;
+}
+
+a.resultUrl:link {
+    color: #008000;
+}
+
+a.resultUrl:visited {
+    color: #008000;
+}
+
+
+
+
+

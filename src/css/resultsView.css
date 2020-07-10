@@ -1,0 +1,37 @@
+.ant-layout-header {
+    background: white;
+}
+
+.ant-layout-content {
+    background: #F7F8FA;
+    height: 100vh;
+}
+
+.ant-layout-footer {
+    height: 10vh;
+}
+
+.ant-pagination {
+    position: absolute;
+    left: 8%;
+    top: 100vh;
+}
+
+.numCounter {
+    height: 5vh;
+}
+
+.count {
+    color: #A0A0A0;
+    font-size: 15px;
+    position: relative;
+    top: 3vh;
+    left: 8%;
+}
+
+.ant-input-search {
+    width: 700px;
+    position: relative;
+    left: 4.5%;
+    top: 25%;
+}
