@@ -7,19 +7,8 @@ const {Search} = Input;
 
 class HomeView extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            wd: null
-        }
-    }
-
-    setWd = (e) => {
-        this.setState({wd: e.target.value});
-    };
-
-    search = () => {
-        this.props.history.push("/s?wd="+this.state.wd);
+    search = (value, event) => {
+        this.props.history.push("/s?wd="+value);
     };
 
     render() {
@@ -32,7 +21,7 @@ class HomeView extends React.Component {
                     <p className="title">Why so Serious</p>
                 </div>
                 <div className="search-div">
-                    <Search placeholder="input search text" enterButton="Search" onChange={this.setWd} onSearch={this.search}/>
+                    <Search size="large"  placeholder="input search text" enterButton="Search" onSearch={this.search}/>
                 </div>
                 <div>
 

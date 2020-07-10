@@ -17,6 +17,7 @@ class ResultsView extends React.Component{
         super(props);
         this.state = {
             wd: window.location.search.substr(4),
+            tmp: window.location.search.substr(4),
             page: 1,
             data: initialData,
             total: 2
@@ -45,12 +46,16 @@ class ResultsView extends React.Component{
         })
     };
 
-    setWd = (e) => {
-        this.setState({wd: e.target.value});
+    search = (value, event) => {
+        this.props.history.push("/s?wd="+value);
+        this.setState({
+            wd: value,
+            page: 1
+        });
     };
 
-    search = () => {
-        this.props.history.push("/s?wd="+this.state.wd);
+    setValue = (e) => {
+        this.setState({tmp: e.target.value});
     };
 
     render() {
@@ -58,7 +63,7 @@ class ResultsView extends React.Component{
             <Layout>
                 <Affix>
                     <Header>
-                        <Search value={this.state.wd} enterButton="Search" onChange={this.setWd} onSearch={this.search}/>
+                        <Search size="large" value={this.state.tmp} enterButton="Search"  onChange={this.setValue} onSearch={this.search}/>
                     </Header>
                 </Affix>
                 <Content>
@@ -76,7 +81,7 @@ class ResultsView extends React.Component{
                             </List.Item>
                         )}
                     />
-                    <Pagination onChange={this.onChange} total={50}/>
+                    <Pagination onChange={this.onChange} total={50} current={this.state.page}/>
                 </Content>
                 <Footer>
 
