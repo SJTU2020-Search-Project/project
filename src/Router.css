@@ -1,0 +1,27 @@
+.whole{
+    width: 2000px;
+    height: 100px;
+    /*background-color: aliceblue;*/
+}
+
+.header{
+    /*color: black;*/
+    font-size:50px;
+    text-align: center;
+}
+
+.searchAll{
+    width: 2000px;
+    height: 30px;
+    text-align: center;
+}
+
+.demo1{
+    width: 400px;
+    height: 40px;
+}
+
+.demo2{
+    width: 100px;
+    height: 40px;
+}
