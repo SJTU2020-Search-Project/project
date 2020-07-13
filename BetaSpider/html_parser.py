@@ -5,14 +5,14 @@ from bs4 import BeautifulSoup
 
 
 class HtmlParser(object):
-    def parse(self, html_cont):
+    def parse(self, html_cont, url):
         if  html_cont is None:
             return
         soup = BeautifulSoup(html_cont, 'html.parser')
-        new_data = self._get_new_data (soup)
+        new_data = self._get_new_data(soup, url)
         return new_data
 
-    def _get_new_data(self,  soup):
+    def _get_new_data(self,  soup, url):
         res_data = {}
 
 
@@ -22,4 +22,6 @@ class HtmlParser(object):
         # 获取词条的内容
         summary_node = soup.find('div', class_='lemma-summary')
         res_data['summary'] = summary_node.get_text()
+        # 获取词条URL
+        res_data['URL'] = url
         return res_data
