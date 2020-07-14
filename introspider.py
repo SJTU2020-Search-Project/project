@@ -19,6 +19,7 @@ def getdata(baseurl):
     #print(tmp)
     link=[]
     title=[]
+    contents=[]
     for item in tmp:
         #print(item)
 
@@ -26,22 +27,21 @@ def getdata(baseurl):
         print('title:')
         print(item.find(target='_blank').text)
 
-
         link.append(str(item.find('a').get('href')))
         print("link:")
         print(item.find('a').get('href'))
 
         print('content:')
-        print(item.find_next_sibling().text)
+        ss = item.find_next_sibling().text
+        ss = re.sub(' ','',ss)
+        contents.append(ss)
+        print(ss)
         print()
-    #print(link)
-    #print(type(link))
 
 if __name__ == '__main__':
     s = input('要搜索内容:')
     s = urllib.parse.quote(s)
     for i in range (0,1):
         baseurl = "https://www.baidu.com/s?wd=%s&ch=8&pn=%d&oq=%s&tn=78040160_5_pg"%(s,i*10,s)
-        #print(baseurl)
         getdata(baseurl)
     
