@@ -1,35 +1,38 @@
 from DoubanSpider import html_downloader
 from DoubanSpider import douban_parser
-import requests
+from DoubanSpider import douban_outputer
+import time
 
 
 class doubanSpider(object):
     def __init__(self):
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = douban_parser.DoubanParser()
+        self.outputer = douban_outputer.DoubanOutputer()
 
     def craw(self, root_url):
         try:
 
-            print('crawling...')
             html_cont = self.downloader.download(root_url)
             data = self.parser.parse(html_cont)
-            # self.outputer.collect_data(data)
+            self.outputer.collect_data(data)
             print('crawled')
             print(data)
         except:
-            print('skipping...')
-
+            print("invalid url")
 
 
 if __name__ == '__main__':
-    # i = 1
-    # size = 100              #爬取规模
+    start = 1300080
+    size = 20
+    i = 0
     obj_spider = doubanSpider()
-    # while i < size:
-    rooturl = 'https://movie.douban.com/subject/1292052/'
-    obj_spider.craw(rooturl)
-    # i += 1
+    print("crawling")
+    while i < size:
+            url = 'https://movie.douban.com/subject/' + str(start + i) + '/'
+            obj_spider.craw(url)
+            time.sleep(2)
+            i += 1
 
-    # obj_spider.outputer.into_mysql()
-    # print('visiting count: %d' % i)
+    obj_spider.outputer.into_mysql()
+
