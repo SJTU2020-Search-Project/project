@@ -1,13 +1,14 @@
-.ant-layout-header {
+.resultView .ant-layout-header {
     background: white;
 }
 
-.ant-layout-content {
+.resultView .ant-layout-content {
     background: #F7F8FA;
-    height: 100vh;
+    clear: both;
+    height: 200vh;
 }
 
-.ant-layout-footer {
+.resultView .ant-layout-footer {
     height: 10vh;
 }
 
@@ -29,9 +30,31 @@
     left: 8%;
 }
 
-.ant-input-search {
-    width: 700px;
+.search-bar {
+    float: left;
     position: relative;
+    top: 20%;
     left: 4.5%;
-    top: 25%;
+}
+
+.search-bar .ant-input-search {
+    width: 700px;
+}
+
+.ant-list {
+    clear: both;
+    top: 1%;
+}
+
+.signIn-bar {
+    float: right;
+    position: relative;
+    right: 5%;
+}
+
+.signIn-bar .signIn {
+    background: none;
+    border: none;
+    color: #757575;
+    font-size: 20px;
 }

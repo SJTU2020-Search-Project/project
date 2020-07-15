@@ -1,5 +1,14 @@
-.ant-input-search {
+.search-div .ant-input-search {
     width: 700px;
+}
+
+.search-div .ant-input {
+    height: 50px;
+}
+
+.search-div .ant-btn {
+    height: 50px;
+    width: 100px;
 }
 
 .search-div {
@@ -23,9 +32,23 @@
     text-align: center;
 }
 
-.layout {
+.homeView {
     height: 125vh;
     background-image: url("../assets/background.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.signIn-div {
+    float: right;
+    position: relative;
+    right: 14%;
+    top: 20px;
+}
+
+.signIn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
 }

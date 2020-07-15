@@ -1,0 +1,87 @@
+.signIn .ant-layout-header {
+    background: white;
+}
+
+.signIn .ant-layout-content {
+    height: 95vh;
+}
+
+.signIn .ant-input-search {
+    width: 700px;
+    position: relative;
+    left: 4.5%;
+    top: 20%;
+}
+
+.signIn-content {
+    position: relative;
+    left: 50%;
+    top: 50px;
+    background: white;
+    width: 550px;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 #9f9f9f;
+}
+
+h1 {
+    position: relative;
+    left: 200px;
+    top: 5%;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.username {
+    position: relative;
+    left: 75px;
+    top: 5%
+}
+
+.username .ant-input {
+    width: 400px;
+    height: 40px;
+}
+
+.password {
+    position: relative;
+    left: 75px;
+    top: 10%;
+}
+
+.ant-input-password {
+    width: 400px;
+    height: 40px;
+}
+
+p {
+    color: #757575;
+    font-size: 15px;
+}
+
+.signIn-btn {
+    position: relative;
+    left: 75px;
+    top: 125px;
+}
+
+.register-btn {
+    position: relative;
+    left: 75px;
+    top: 150px;
+}
+
+.signIn-btn .ant-btn {
+    width: 400px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    background: #1890FF;
+}
+
+.register-btn .ant-btn {
+    width: 400px;
+    height: 40px;
+    font-size: 15px;
+    color: #757575;
+}

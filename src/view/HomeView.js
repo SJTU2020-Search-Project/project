@@ -11,17 +11,23 @@ class HomeView extends React.Component {
         this.props.history.push("/s?wd="+value);
     };
 
+    signIn = () => {
+        this.props.history.replace("./signIn");
+    };
+
     render() {
         return (
-            <div className="layout">
+            <div className="homeView">
                 <div>
-
+                    <div className="signIn-div">
+                        <button className="signIn" onClick={this.signIn}>Sign In</button>
+                    </div>
                 </div>
                 <div className="logo">
                     <p className="title">Why so Serious</p>
                 </div>
                 <div className="search-div">
-                    <Search size="large"  placeholder="input search text" enterButton="Search" onSearch={this.search}/>
+                    <Search size="large" placeholder="input search text" enterButton="Search" onSearch={this.search}/>
                 </div>
                 <div>
 

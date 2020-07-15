@@ -1,0 +1,49 @@
+.wikiView .ant-layout-header {
+    background: #1890FF;
+}
+
+.wikiView .signIn {
+    color: white;
+}
+
+.wikiView .ant-layout-content {
+    height: 95vh;
+}
+
+.wikiView .content {
+    background: white;
+    height: 85vh;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    top: 5vh;
+    padding: 30px;
+}
+
+.wikiView .main-content {
+    width: 70%;
+}
+
+.wikiView .wiki-title {
+    position: relative;
+    top: 30px;
+}
+
+.wikiView .wiki-name {
+    color: black;
+    font-size: 35px;
+}
+
+.wikiView .wiki-score {
+    font-size: 25px;
+}
+
+.wikiView .wiki-para {
+    position: relative;
+    top: 30px;
+}
+
+.wikiView .basicInfo {
+    position: relative;
+    top: 50px;
+}
