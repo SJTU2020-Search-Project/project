@@ -19,7 +19,7 @@ def getdata(baseurl):
         print(item)
 
 if __name__ == '__main__':
-    s = input('要查询内容:')
+    s = input('要搜索内容:')
     s = urllib.parse.quote(s)
     baseurl = "https://zh.wikipedia.org/wiki/%s"%(s)
     #print(baseurl)
