@@ -1,18 +1,28 @@
 package com.backend.backend.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table(name = "movie", schema = "douban")
+@Getter
+@Setter
 public class movie {
-    private int movieId;
-    private String title;
-
-
-
     @Id
     @Column(name = "movie_id")
+    private int movieId;
+    @Basic
+    @Column(name = "title")
+    private String title;
+    @Basic
+
+
+
+
+
 
     public int getMovieId() {
         return movieId;
@@ -22,8 +32,7 @@ public class movie {
         this.movieId = movieId;
     }
 
-    @Basic
-    @Column(name = "title")
+
     public String getTitle() {
         return title;
     }
