@@ -6,6 +6,8 @@ import com.backend.backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieServiceimpl implements MovieService {
     @Autowired
@@ -16,6 +18,10 @@ public class MovieServiceimpl implements MovieService {
         return movieDao.findOne(id);
     }
 
+    @Override
+    public List<MovieEntity> findMovieByTitle(String title) {
+        return movieDao.findByTitle(title);
+    }
 
 
 }

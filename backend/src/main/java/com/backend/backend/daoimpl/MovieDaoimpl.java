@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.backend.backend.repository.MovieRepository;
 
+import java.util.List;
+
 @Repository
 public class MovieDaoimpl implements MovieDao {
     @Autowired
@@ -14,5 +16,10 @@ public class MovieDaoimpl implements MovieDao {
     @Override
     public MovieEntity findOne(Integer id) {
         return  movieRepository.getOne(id);
+    }
+
+    @Override
+    public List<MovieEntity> findByTitle(String title) {
+    return movieRepository.findMovieEntitiesByTitleLike(title);
     }
 }

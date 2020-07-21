@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class MovieController {
     @Autowired
@@ -17,4 +19,10 @@ public class MovieController {
         System.out.println("Searching id:" + id);
         return movieService.findMovieById(id);
     }
+
+    @GetMapping(value = "/search?{title}")
+    public List<MovieEntity> searchMovie(@PathVariable("title") String title){
+        System.out.println("Searching title:"+title);
+        return movieService.findMovieByTitle(title);
+}
 }
