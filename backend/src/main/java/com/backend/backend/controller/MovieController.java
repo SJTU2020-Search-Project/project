@@ -3,9 +3,7 @@ package com.backend.backend.controller;
 import com.backend.backend.entity.MovieEntity;
 import com.backend.backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +18,8 @@ public class MovieController {
         return movieService.findMovieById(id);
     }
 
-    @GetMapping(value = "/search?{title}")
-    public List<MovieEntity> searchMovie(@PathVariable("title") String title){
+    @RequestMapping(value = "/search")
+    public List<MovieEntity> searchMovie(@RequestParam("title") String title){
         System.out.println("Searching title:"+title);
         return movieService.findMovieByTitle(title);
 }

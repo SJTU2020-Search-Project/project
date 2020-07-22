@@ -38,4 +38,12 @@ public class MovieControllerTest {
             .session(session)
     ).andDo(MockMvcResultHandlers.print());
     }
+    @Test
+    public void searchMovie() throws Exception{
+        mvc.perform(MockMvcRequestBuilders.get("/search?title=一")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .accept(MediaType.APPLICATION_JSON_UTF8)
+                .session(session)
+        ).andDo(MockMvcResultHandlers.print());
+    }
 }
