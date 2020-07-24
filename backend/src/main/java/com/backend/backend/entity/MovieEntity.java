@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Proxy(lazy=false)
-@Table(name = "movie", schema = "douban")
+@Table(name = "movie",schema = "douban")
 public class MovieEntity {
     private int movieId;
     private String title;

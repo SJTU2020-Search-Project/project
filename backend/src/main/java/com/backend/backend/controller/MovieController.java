@@ -3,6 +3,7 @@ package com.backend.backend.controller;
 import com.backend.backend.entity.MovieEntity;
 import com.backend.backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/search")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public List<MovieEntity> searchMovie(@RequestParam("title") String title){
         System.out.println("Searching title:"+title);
         return movieService.findMovieByTitle(title);
