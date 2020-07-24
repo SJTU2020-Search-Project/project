@@ -21,6 +21,11 @@ class Baike extends React.Component{
         else this.setState({classname: "container-leave"});
     };
 
+    score = (rating) => {
+        if (rating < 0) return "暂无";
+        else return rating;
+    };
+
     render() {
 
         const {info} = this.props;
@@ -31,10 +36,10 @@ class Baike extends React.Component{
                 <img src={info.image} alt="Loading..."/>
                 <div className="baike-title">
                     <div>
-                        <a href={"../wiki?wd="+info.name} className="wiki-name" dangerouslySetInnerHTML={{__html: this.warpTag(info.name)}}/>
+                        <a href={"../wiki/"+info.movieId} className="wiki-name" dangerouslySetInnerHTML={{__html: this.warpTag(info.title)}}/>
                     </div>
                     <div>
-                        <p className="wiki-score">豆瓣评分: {info.score}</p>
+                        <p className="wiki-score">豆瓣评分: {this.score(info.rating)}</p>
                     </div>
                 </div>
                 <div className="summary">
@@ -43,21 +48,21 @@ class Baike extends React.Component{
                 <div className="basic-info">
                     <dl className="basic-info-left">
                         <dt className="basicInfo-name">导演</dt>
-                        <dd className="basicInfo-value">{info.value[0]}</dd>
+                        <dd className="basicInfo-value">{info.dir}</dd>
                         <dt className="basicInfo-name">类型</dt>
-                        <dd className="basicInfo-value">{info.value[2]}</dd>
+                        <dd className="basicInfo-value">{info.genre}</dd>
                         <dt className="basicInfo-name">语言</dt>
-                        <dd className="basicInfo-value">{info.value[4]}</dd>
+                        <dd className="basicInfo-value">{info.language}</dd>
                         <dt className="basicInfo-name">片长</dt>
-                        <dd className="basicInfo-value">{info.value[6]}</dd>
+                        <dd className="basicInfo-value">{info.runtime}</dd>
                     </dl>
                     <dl className="basic-info-right">
                         <dt className="basicInfo-name">主演</dt>
-                        <dd className="basicInfo-value">{info.value[1]}</dd>
+                        <dd className="basicInfo-value">{info.actors}</dd>
                         <dt className="basicInfo-name">国家/地区</dt>
-                        <dd className="basicInfo-value">{info.value[3]}</dd>
+                        <dd className="basicInfo-value">{info.nation}</dd>
                         <dt className="basicInfo-name">上映日期</dt>
-                        <dd className="basicInfo-value">{info.value[5]}</dd>
+                        <dd className="basicInfo-value">{info.date}</dd>
                     </dl>
                 </div>
             </div>

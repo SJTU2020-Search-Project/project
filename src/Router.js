@@ -3,6 +3,8 @@ import {Router, Redirect, Route, Switch} from "react-router";
 import {history} from "./utils/history";
 import ResultsView from "./view/ResultsView";
 import HomeView from "./view/HomeView";
+import SignIn from "./view/SignInView";
+import WikiView from "./view/WikiView";
 
 class BasicRoute extends React.Component {
 
@@ -20,6 +22,8 @@ class BasicRoute extends React.Component {
                 <Switch>
                     <Route exact path="/" component = {HomeView}/>
                     <Route exact path="/s" component = {ResultsView}/>
+                    <Route exact path="/signIn" component={SignIn}/>
+                    <Route exact path="/wiki/*" component={WikiView}/>
                     <Redirect from="/*" to="/" />
                 </Switch>
             </Router>

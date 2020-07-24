@@ -2,6 +2,7 @@ import React from "react";
 import {Layout, Affix, List, Space, Pagination, Input} from 'antd';
 import Ret from "../components/Ret";
 import Baike from "../components/Baike";
+import {postRequest_v2} from "../utils/ajax";
 import 'antd/dist/antd.css';
 import '../css/resultsView.css';
 
@@ -25,24 +26,24 @@ class ResultsView extends React.Component{
             page: 1,
             data: initialData,
             total: 2,
-            wiki: wikiData
+            wiki: [{"":""}]
         };
     }
 
-    // componentDidMount() {
-    //     const callback = (data) => {
-    //         this.setState({
-    //             data: data
-    //         })
-    //     }
-    //     this.getData(this.state.wd, this.state.page, callback);
-    // };
-    //
-    // getData = (wd, page, callback) => {
-    //     const data = {wd: wd, page: page};
-    //     const url = `http://localhost:8080/search`;
-    //     postRequest_v2(url, data, callback);
-    // };
+    componentDidMount() {
+        const callback = (data) => {
+            this.setState({
+                wiki: data
+            })
+        };
+        this.getData(this.state.wd, this.state.page, callback);
+    };
+
+    getData = (wd, page, callback) => {
+        const data = {title: wd, page: page};
+        const url = `http://localhost:8080/search`;
+        postRequest_v2(url, data, callback);
+    };
 
     onChange = (page) => {
         console.log(page);
@@ -52,11 +53,16 @@ class ResultsView extends React.Component{
     };
 
     search = (value, event) => {
+        if (value === this.state.wd) return;
         this.props.history.push("/s?wd="+value);
-        this.setState({
-            wd: value,
-            page: 1
-        });
+        const callback = (data) => {
+            this.setState({
+                wd: value,
+                page: 1,
+                wiki: data
+            });
+        };
+        this.getData(value, 1, callback);
     };
 
     setValue = (e) => {
@@ -85,7 +91,17 @@ class ResultsView extends React.Component{
                         <div className="numCounter">
                             <p className="count">About {this.state.total} results</p>
                         </div>
-                        <Baike info={this.state.wiki} wd={this.state.wd}/>
+                        <List
+                            itemLayout="vertical"
+                            dataSource={this.state.wiki}
+                            renderItem={item => (
+                                <List.Item>
+                                    <Space direction="vertical">
+                                        <Baike info={item} wd={this.state.wd}/>
+                                    </Space>
+                                </List.Item>
+                            )}
+                        />
                         <List
                             itemLayout="vertical"
                             dataSource={this.state.data}

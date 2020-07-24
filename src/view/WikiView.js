@@ -2,6 +2,7 @@ import React from "react";
 import {Layout, Affix} from "antd";
 import 'antd/dist/antd.css';
 import '../css/wikiView.css';
+import {postRequest_v3} from "../utils/ajax";
 
 const {Header, Content} = Layout;
 
@@ -14,13 +15,34 @@ class WikiView extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            wd: window.location.search.substr(4),
-            data: wikiData
+            id: null,
+            data: {"":""}
         }
     }
 
+    componentDidMount() {
+        const callback = (data) => {
+            this.setState({
+                data: data
+            })
+        };
+        this.getData(callback);
+    };
+
+    getData = (callback) => {
+        const tmp = window.location.pathname;
+        const id = tmp.substr(tmp.lastIndexOf('/')+1);
+        const url = `http://localhost:8080/findMovie/`+id;
+        postRequest_v3(url, callback);
+    };
+
     signIn = () => {
         this.props.history.push("./signIn");
+    };
+
+    score = (rating) => {
+        if (rating < 0) return "暂无";
+        else return rating;
     };
 
     render() {
@@ -41,8 +63,8 @@ class WikiView extends React.Component{
                         <div className="content">
                             <div className="main-content">
                                 <div className="wiki-title">
-                                    <p className="wiki-name">{info.name}</p>
-                                    <p className="wiki-score">豆瓣评分: {info.score}</p>
+                                    <p className="wiki-name">{info.title}</p>
+                                    <p className="wiki-score">豆瓣评分: {this.score(info.rating)}</p>
                                 </div>
                                 <div className="wiki-summary">
                                     <p className="wiki-para">{info.summary}</p>
@@ -50,21 +72,21 @@ class WikiView extends React.Component{
                                 <div className="basicInfo">
                                     <dl className="basic-info-left">
                                         <dt className="basicInfo-name">导演</dt>
-                                        <dd className="basicInfo-value">{info.value[0]}</dd>
+                                        <dd className="basicInfo-value">{info.dir}</dd>
                                         <dt className="basicInfo-name">类型</dt>
-                                        <dd className="basicInfo-value">{info.value[2]}</dd>
+                                        <dd className="basicInfo-value">{info.genre}</dd>
                                         <dt className="basicInfo-name">语言</dt>
-                                        <dd className="basicInfo-value">{info.value[4]}</dd>
+                                        <dd className="basicInfo-value">{info.language}</dd>
                                         <dt className="basicInfo-name">片长</dt>
-                                        <dd className="basicInfo-value">{info.value[6]}</dd>
+                                        <dd className="basicInfo-value">{info.runtime}</dd>
                                     </dl>
                                     <dl className="basic-info-right">
                                         <dt className="basicInfo-name">主演</dt>
-                                        <dd className="basicInfo-value">{info.value[1]}</dd>
+                                        <dd className="basicInfo-value">{info.actors}</dd>
                                         <dt className="basicInfo-name">国家/地区</dt>
-                                        <dd className="basicInfo-value">{info.value[3]}</dd>
+                                        <dd className="basicInfo-value">{info.nation}</dd>
                                         <dt className="basicInfo-name">上映日期</dt>
-                                        <dd className="basicInfo-value">{info.value[5]}</dd>
+                                        <dd className="basicInfo-value">{info.date}</dd>
                                     </dl>
                                 </div>
                             </div>
