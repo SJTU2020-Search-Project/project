@@ -25,4 +25,12 @@ public class MovieController {
         System.out.println("Searching title:"+title);
         return movieService.findMovieByTitle(title);
 }
+
+    @PostMapping(value = "/addMovie")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public MovieEntity addMovie(@RequestBody MovieEntity movieEntity){
+        return movieService.addMovie(movieEntity);
+    }
+
+
 }

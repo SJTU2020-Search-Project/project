@@ -23,5 +23,10 @@ public class MovieServiceimpl implements MovieService {
         return movieDao.findByTitle(title);
     }
 
+    @Override
+    public MovieEntity addMovie(MovieEntity movieEntity) {
+        return movieDao.insertMovie(movieEntity);
+    }
+
 
 }

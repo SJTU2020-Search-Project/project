@@ -22,4 +22,9 @@ public class MovieDaoimpl implements MovieDao {
     public List<MovieEntity> findByTitle(String title) {
     return movieRepository.findMovieEntitiesByTitleLike(title);
     }
+
+    @Override
+    public MovieEntity insertMovie(MovieEntity movieEntity) {
+        return movieRepository.save(movieEntity);
+    }
 }

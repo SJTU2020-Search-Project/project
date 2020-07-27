@@ -7,4 +7,5 @@ import java.util.List;
 public interface MovieService {
     MovieEntity findMovieById (Integer id);
     List<MovieEntity> findMovieByTitle(String title);
+    MovieEntity addMovie (MovieEntity movieEntity);
 }
