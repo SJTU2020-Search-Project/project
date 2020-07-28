@@ -25,7 +25,17 @@ public class MovieServiceimpl implements MovieService {
 
     @Override
     public MovieEntity addMovie(MovieEntity movieEntity) {
-        return movieDao.insertMovie(movieEntity);
+        return movieDao.insertOne(movieEntity);
+    }
+
+    @Override
+    public void deleteMovieById(Integer id) {
+        movieDao.deleteOne(id);
+    }
+
+    @Override
+    public MovieEntity updateMovie(MovieEntity movieEntity) {
+        return movieDao.updateOne(movieEntity);
     }
 
 

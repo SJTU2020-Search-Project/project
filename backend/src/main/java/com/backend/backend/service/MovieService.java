@@ -8,4 +8,6 @@ public interface MovieService {
     MovieEntity findMovieById (Integer id);
     List<MovieEntity> findMovieByTitle(String title);
     MovieEntity addMovie (MovieEntity movieEntity);
+    void deleteMovieById(Integer id);
+    MovieEntity updateMovie(MovieEntity movieEntity);
 }

@@ -24,7 +24,17 @@ public class MovieDaoimpl implements MovieDao {
     }
 
     @Override
-    public MovieEntity insertMovie(MovieEntity movieEntity) {
+    public MovieEntity insertOne(MovieEntity movieEntity) {
+        return movieRepository.save(movieEntity);
+    }
+
+    @Override
+    public void deleteOne(Integer id) {
+        movieRepository.deleteById(id);
+    }
+
+    @Override
+    public MovieEntity updateOne(MovieEntity movieEntity) {
         return movieRepository.save(movieEntity);
     }
 }
