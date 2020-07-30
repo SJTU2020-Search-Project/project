@@ -9,5 +9,5 @@ public interface MovieDao {
     List<MovieEntity>findByTitle(String title);
     MovieEntity insertOne(MovieEntity movieEntity);
     void deleteOne(Integer id);
-    MovieEntity updateOne(MovieEntity movieEntity);
+    void updateOne(MovieEntity movieEntity);
 }

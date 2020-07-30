@@ -36,13 +36,13 @@ public class MovieController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void del(@PathVariable("id") Integer id){
         movieService.deleteMovieById(id);
-        System.out.println(id + "is deleted.");
+        System.out.println(id + " is deleted.");
     }
 
     @PostMapping(value = "/update")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public MovieEntity updateMovie(@RequestBody MovieEntity movieEntity){
-        return movieService.updateMovie(movieEntity);
+    public void updateMovie(@RequestBody MovieEntity movieEntity){
+        movieService.updateMovie(movieEntity);
     }
 
 }

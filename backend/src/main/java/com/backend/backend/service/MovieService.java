@@ -9,5 +9,5 @@ public interface MovieService {
     List<MovieEntity> findMovieByTitle(String title);
     MovieEntity addMovie (MovieEntity movieEntity);
     void deleteMovieById(Integer id);
-    MovieEntity updateMovie(MovieEntity movieEntity);
+    void updateMovie(MovieEntity movieEntity);
 }

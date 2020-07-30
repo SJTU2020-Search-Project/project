@@ -5,6 +5,7 @@ import com.backend.backend.entity.MovieEntity;
 import com.backend.backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,13 +30,16 @@ public class MovieServiceimpl implements MovieService {
     }
 
     @Override
+    @Transactional
     public void deleteMovieById(Integer id) {
         movieDao.deleteOne(id);
     }
 
+
     @Override
-    public MovieEntity updateMovie(MovieEntity movieEntity) {
-        return movieDao.updateOne(movieEntity);
+    @Transactional
+    public void updateMovie(MovieEntity movieEntity) {
+        movieDao.updateOne(movieEntity);
     }
 
 

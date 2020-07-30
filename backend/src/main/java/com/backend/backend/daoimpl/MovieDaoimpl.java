@@ -2,6 +2,8 @@ package com.backend.backend.daoimpl;
 
 import com.backend.backend.dao.MovieDao;
 import com.backend.backend.entity.MovieEntity;
+import org.hibernate.annotations.SQLUpdate;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.backend.backend.repository.MovieRepository;
@@ -34,7 +36,8 @@ public class MovieDaoimpl implements MovieDao {
     }
 
     @Override
-    public MovieEntity updateOne(MovieEntity movieEntity) {
-        return movieRepository.save(movieEntity);
+    public void updateOne(MovieEntity movieEntity) {
+       movieRepository.updateMovieById(movieEntity.getMovieId(),movieEntity.getTitle(),movieEntity.getDir(),movieEntity.getActors(),movieEntity.getGenre(),movieEntity.getNation(),movieEntity.getLanguage(),movieEntity.getDate(),movieEntity.getRuntime(),movieEntity.getRating(),movieEntity.getSummary(),movieEntity.getVotes());
     }
+
 }
