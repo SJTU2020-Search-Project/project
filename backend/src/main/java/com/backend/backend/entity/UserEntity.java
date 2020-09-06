@@ -1,14 +1,19 @@
 package com.backend.backend.entity;
 
+
 import org.hibernate.annotations.Proxy;
+import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
 
 @Entity
+
 @Proxy(lazy = false)
 @Table(name = "user")
-public class UserEntity {
+public class UserEntity implements Persistable {
+    @Id
     private String name;
+
     private String password;
     private String role;
 
@@ -42,6 +47,16 @@ public class UserEntity {
         this.role = role;
     }
 
+
+    @Override
+    public Object getId() {
+        return name;
+    }
+
+    @Override
+    public boolean isNew(){
+        return true;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

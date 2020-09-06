@@ -7,3 +7,13 @@ spring:
   jpa:
     hibernate:
     show-sql: true
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
