@@ -1,9 +1,7 @@
 package com.backend.backend.controller;
 
 import com.backend.backend.entity.MovieEntity;
-import com.backend.backend.entity.UserEntity;
 import com.backend.backend.service.MovieService;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

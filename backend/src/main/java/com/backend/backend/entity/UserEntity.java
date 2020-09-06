@@ -3,13 +3,14 @@ package com.backend.backend.entity;
 
 import org.hibernate.annotations.Proxy;
 import org.springframework.data.domain.Persistable;
+//import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
 
 @Entity
 
 @Proxy(lazy = false)
-@Table(name = "user")
+@Table(name = "user",schema = "douban")
 public class UserEntity implements Persistable {
     @Id
     private String name;
@@ -17,7 +18,7 @@ public class UserEntity implements Persistable {
     private String password;
     private String role;
 
-    @Id
+
     @Column(name = "name")
     public String getName() {
         return name;

@@ -29,6 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS,"/search?**").permitAll()
+                .antMatchers("/signup").permitAll()
                 .anyRequest().authenticated();
 
         http.sessionManagement()
