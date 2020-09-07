@@ -20,7 +20,7 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/search")
-    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public List<MovieEntity> searchMovie(@RequestParam("title") String title){
         System.out.println("Searching title:"+title);
         return movieService.findMovieByTitle(title);
@@ -40,7 +40,7 @@ public class MovieController {
     }
 
     @PostMapping(value = "/update")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER') ")
     public void updateMovie(@RequestBody MovieEntity movieEntity){
         movieService.updateMovie(movieEntity);
 
