@@ -47,3 +47,15 @@
     position: relative;
     top: 50px;
 }
+
+.wikiView .basic-info-left {
+    float: left;
+    position: absolute;
+    left: 3%;
+}
+
+.wikiView .basic-info-right {
+    float: right;
+    position: absolute;
+    right: 3%;
+}

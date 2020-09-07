@@ -5,8 +5,8 @@
 .container-leave {
      background: white;
      position: relative;
-     left: 7.5%;
-     width: 46.5%;
+     left: 110px;
+     width: 710px;
      border-radius: 10px;
      padding: 10px;
      height: 550px;
@@ -16,8 +16,8 @@
 .container-entry {
     background: white;
     position: relative;
-    left: 7.5%;
-    width: 46.5%;
+    left: 110px;
+    width: 710px;
     border-radius: 10px;
     padding: 10px;
     height: 550px;
@@ -28,9 +28,10 @@
 .baike-title {
     float: right;
     height: 150px;
-    position: relative;
-    right: 35%;
-    top: 5%;
+    width: 350px;
+    position: absolute;
+    right: 200px;
+    top: 50px;
 }
 
 .wiki-name {
@@ -47,23 +48,28 @@
 
 img {
     height: 150px;
+    width: 150px;
 }
 
 .summary {
+    position: absolute;
+    top: 160px;
     height: 200px;
     overflow: hidden;
 }
 
-.basic-info-left {
+.basic-Info-left {
     float: left;
-    position: relative;
+    position: absolute;
     left: 3%;
+    top: 360px;
 }
 
-.basic-info-right {
+.basic-Info-right {
     float: right;
-    position: relative;
+    position: absolute;
     right: 3%;
+    top: 360px;
 }
 
 .basicInfo-name {
