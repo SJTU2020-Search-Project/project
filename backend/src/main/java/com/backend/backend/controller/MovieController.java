@@ -1,7 +1,10 @@
 package com.backend.backend.controller;
 
+import com.backend.backend.daoimpl.Py;
 import com.backend.backend.entity.MovieEntity;
+import com.backend.backend.entity.UserEntity;
 import com.backend.backend.service.MovieService;
+import com.backend.backend.entity.entry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +20,14 @@ public class MovieController {
     public MovieEntity findMovie(@PathVariable("id") Integer id){
         System.out.println("Searching id:" + id);
         return movieService.findMovieById(id);
+    }
+
+    @RequestMapping(value = "/external_search")
+    // @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    public List<entry> external_search(@RequestParam("title") String title) {
+        System.out.println("Searching title:"+title);
+        Py py = new Py();
+        return py.getpython(title);
     }
 
     @RequestMapping(value = "/search")
