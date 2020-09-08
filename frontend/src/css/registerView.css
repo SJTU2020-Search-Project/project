@@ -1,0 +1,79 @@
+.register .ant-layout-header {
+    background: white;
+}
+
+.register .ant-layout-content {
+    height: 95vh;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: #0274B3;
+}
+
+.register .ant-input-search {
+    width: 700px;
+    position: relative;
+    left: 160px;
+    top: 20%;
+}
+
+.register-content {
+    position: relative;
+    left: 50%;
+    margin-left: -550px;
+    top: 50px;
+    background: white;
+    width: 1100px;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 #9f9f9f;
+}
+
+.back {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.back p {
+    color: #83A7D4;
+}
+
+.register h1 {
+    position: relative;
+    left: 475px;
+    top: 5%;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.register .username {
+    position: relative;
+    left: 350px;
+    top: 5%
+}
+
+.register .password {
+    position: relative;
+    left: 350px;
+    top: 10%;
+}
+
+.register .repeat {
+    position: relative;
+    left: 350px;
+    top: 15%
+}
+
+.register .register-btn {
+    position: relative;
+    left: 350px;
+    top: 150px;
+}
+
+.register .register-btn .ant-btn {
+    width: 400px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    background: #1890FF;
+}

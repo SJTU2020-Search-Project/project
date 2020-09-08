@@ -1,0 +1,60 @@
+.resultView .ant-layout-header {
+    background: white;
+}
+
+.resultView .ant-layout-content {
+    background: #F7F8FA;
+    clear: both;
+    height: 200vh;
+}
+
+.resultView .ant-layout-footer {
+    height: 10vh;
+}
+
+.ant-pagination {
+    position: absolute;
+    left: 8%;
+    top: 200vh;
+}
+
+.numCounter {
+    height: 5vh;
+}
+
+.count {
+    color: #A0A0A0;
+    font-size: 15px;
+    position: relative;
+    top: 3vh;
+    left: 8%;
+}
+
+.search-bar {
+    float: left;
+    position: relative;
+    top: 20%;
+    left: 4.5%;
+}
+
+.search-bar .ant-input-search {
+    width: 700px;
+}
+
+.ant-list {
+    clear: both;
+    top: 1%;
+}
+
+.signIn-bar {
+    float: right;
+    position: relative;
+    right: 5%;
+}
+
+.signIn-bar .signIn {
+    background: none;
+    border: none;
+    color: #757575;
+    font-size: 20px;
+}
