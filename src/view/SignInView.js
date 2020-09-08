@@ -74,7 +74,7 @@ class SignIn extends React.Component{
                                 <Button onClick={this.checkMsg}>Sign In</Button>
                             </div>
                             <div className="register-btn">
-                                <Button onClick={this.register} disabled={true}>Register</Button>
+                                <Button onClick={this.register}>Register</Button>
                             </div>
                         </div>
                     </Content>

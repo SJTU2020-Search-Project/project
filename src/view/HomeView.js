@@ -1,9 +1,11 @@
 import React from "react";
-import {Input} from "antd";
+import {Input, Modal} from "antd";
 import 'antd/dist/antd.css';
-import '../css/homeView.css'
+import '../css/homeView.css';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 const {Search} = Input;
+const { confirm } = Modal;
 
 class HomeView extends React.Component {
 
@@ -12,7 +14,24 @@ class HomeView extends React.Component {
     };
 
     signIn = () => {
-        this.props.history.replace("./signIn");
+        if (localStorage.getItem('user')) {
+            confirm({
+                title: '确定要退出吗?',
+                icon: <ExclamationCircleOutlined />,
+                content: '点确定退出登录',
+                okText: '确定',
+                cancelText: '取消',
+                onOk() {
+                    console.log('OK');
+                    localStorage.removeItem('user');
+                    localStorage.removeItem('role');
+                    window.location.reload();
+                },
+                onCancel() {
+                    console.log('Cancel');
+                },
+            });
+        } else this.props.history.push("./signIn");
     };
 
     render() {
@@ -20,7 +39,8 @@ class HomeView extends React.Component {
             <div className="homeView">
                 <div>
                     <div className="signIn-div">
-                        <button className="signIn" onClick={this.signIn}>Sign In</button>
+                        <button className="signIn" onClick={this.signIn}>{localStorage.getItem('user')?localStorage.getItem('user'):'Sign In'}</button>
+                        <Modal> </Modal>
                     </div>
                 </div>
                 <div className="logo">

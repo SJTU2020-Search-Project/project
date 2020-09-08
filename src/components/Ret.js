@@ -32,10 +32,10 @@ class Ret extends React.Component{
         return (
             <div className={this.state.classname} onMouseEnter={this.changeClassname} onMouseLeave={this.changeClassname}>
                 <div className="content">
-                    <a href={this.randomUrl(info.url)} className="resultTitle" target="_blank" rel="noopener noreferrer"
+                    <a href={this.randomUrl(info.link)} className="resultTitle" target="_blank" rel="noopener noreferrer"
                        dangerouslySetInnerHTML={{__html: this.warpTag(info.title)}}/>
                     <p className="resultContent">{info.content}</p>
-                    <a href={this.randomUrl(info.url)} className="resultUrl" target="_blank" rel="noopener noreferrer">{info.url}</a>
+                    <a href={this.randomUrl(info.link)} className="resultUrl" target="_blank" rel="noopener noreferrer">{info.url}</a>
                 </div>
             </div>
         );

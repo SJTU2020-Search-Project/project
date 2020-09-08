@@ -31,8 +31,8 @@ class RegisterView extends React.Component{
         this.props.history.replace("/signIn");
     };
 
-    saveUser = (userid, password, callback) =>{
-        const data = {userid: userid, password: password};
+    saveUser = (userid, password, callback) => {
+        const data = {name: userid, password: password, role: 'ROLE_USER'};
         const url = `http://localhost:8080/signup`;
         postRequest(url, data, callback);
     };
@@ -63,11 +63,11 @@ class RegisterView extends React.Component{
                 alert("用户名已存在");
             } else {
                 localStorage.setItem('user', this.state.username);
-                localStorage.setItem('role', data.role);
+                localStorage.setItem('role', 'ROLE_USER');
                 this.props.history.replace("/");
             }
         };
-        this.saveUser(this.state.userid, this.state.password, callback);
+        this.saveUser(this.state.username, this.state.password, callback);
     };
 
     render() {
@@ -96,7 +96,7 @@ class RegisterView extends React.Component{
                                 <Input.Password onBlur={this.setRepeat} placeholder="Please input your password"/>
                             </div>
                             <div className="register-btn">
-                                <Button onClick={this.register} disabled={true}>Register</Button>
+                                <Button onClick={this.register}>Register</Button>
                             </div>
                         </div>
                     </Content>

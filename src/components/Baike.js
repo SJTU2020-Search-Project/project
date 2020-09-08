@@ -46,7 +46,7 @@ class Baike extends React.Component{
                     <p className="para">{info.summary}</p>
                 </div>
                 <div className="basic-info">
-                    <dl className="basic-info-left">
+                    <dl className="basic-Info-left">
                         <dt className="basicInfo-name">导演</dt>
                         <dd className="basicInfo-value">{info.dir}</dd>
                         <dt className="basicInfo-name">类型</dt>
@@ -56,7 +56,7 @@ class Baike extends React.Component{
                         <dt className="basicInfo-name">片长</dt>
                         <dd className="basicInfo-value">{info.runtime}</dd>
                     </dl>
-                    <dl className="basic-info-right">
+                    <dl className="basic-Info-right">
                         <dt className="basicInfo-name">主演</dt>
                         <dd className="basicInfo-value">{info.actors}</dd>
                         <dt className="basicInfo-name">国家/地区</dt>
